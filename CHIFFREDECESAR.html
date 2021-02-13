@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+ 
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiffre de césar</title> 
+    <meta name="author" content="ISN_Robespierre" />
+    <link rel="stylesheet" href="chiffrer.css"/>
+    <title>CHIFFRE CESAR PAGE</title>
+  </head>
+    <body>
+	<h1>LE CHIFFRE DE CESAR</h1>
+		<p class="action">MESSAGE A TRAITE:</p>
+		<textarea class="barre1" id="message1"></textarea>
+        <p class="barda">CLEF:</p>
+            <input class="barre2" id="clef" type="text" value="3">
+            <div class="btn1">
+			    <input class="chiff" type="button" id="boutonChiffrer" value="CHIFFRER">
+            </div>
+            <div class="btn2">
+			    <input class="dechiff" type="button" id="boutonDechiffrer" value="DECHIFFRER">
+            </div>
+		<p class="but">MESSAGE TRAITE:</p>
+			<div id="message2"><div>
+    <body>
+ 
+    <script>
+var clef;
+var message1;
+var message2;
+ 
+var setupEvents = function() {
+ 
+	clef = document.getElementById("clef");  
+    message1 = document.getElementById("message1");
+	message2 = document.getElementById("message2");
+ 
+	var boutonChiffrer = document.getElementById("boutonChiffrer");
+	var boutonDechiffrer = document.getElementById("boutonDechiffrer");
+	boutonChiffrer.addEventListener("click", actualiserMessage2Chiffrer);
+	boutonDechiffrer.addEventListener("click", actualiserMessage2Dechiffrer);
+}
+ 
+window.addEventListener("load", setupEvents);
+ 
+var actualiserMessage2Chiffrer = function() 
+{
+	var nombreClef = parseFloat(clef.value);
+	var messageUn = message1.value;
+    var onChiffre = chiffrer(messageUn, nombreClef);
+	message2.innerHTML = onChiffre;
+ 
+}
+ 
+var actualiserMessage2Dechiffrer = function()
+{
+ var nombreClef = parseFloat(clef.value);
+ var messageUn = message1.value;
+ var onDechiffre = dechiffrer(messageUn, nombreClef);
+ message2.innerHTML = onDechiffre;
+}
+ 
+ 
+ 
+var chiffrer = function(message1, clef) {
+    var message2 = "";
+	var taille = message1.length;
+    for(var i = 0; i < taille; i++) 
+	{
+        var messageUnCaractere = message1.charCodeAt(i);
+        if(messageUnCaractere >= 97 && messageUnCaractere <= 122) 
+		{
+            message2 += String.fromCharCode((messageUnCaractere - 97 + clef) % 26 + 97);
+        } 
+		else if(messageUnCaractere >= 65 && messageUnCaractere <= 90) 
+		{
+            message2 += String.fromCharCode((messageUnCaractere - 65 + clef) % 26 + 65);
+        } 
+		else 
+		{
+            message2 += String.fromCharCode(messageUnCaractere);
+        }
+    }
+    return message2;
+}
+ 
+var dechiffrer = function(message1, clef) {
+    var message2 = "";
+	var taille = message1.length;
+    for(var i = 0; i < taille; i++) 
+	{
+        var messageDeuxCaractere = message1.charCodeAt(i);
+        if(messageDeuxCaractere >= 97 && messageDeuxCaractere <= 122) 
+		{
+            message2 += String.fromCharCode((messageDeuxCaractere - 97 - clef + 26) % 26 + 97);
+        } 
+		else if(messageDeuxCaractere >= 65 && messageDeuxCaractere <= 90) 
+		{
+            message2 += String.fromCharCode((messageDeuxCaractere - 65 - clef + 26) % 26 + 65);
+        } 
+		else 
+		{
+            message2 += String.fromCharCode(messageDeuxCaractere);
+        }
+    }
+    return message2;
+}</script>	
+  </body>
+</html>

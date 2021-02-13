@@ -1,0 +1,131 @@
+@media screen and (max-width: 5000px){
+    html{
+        Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+        font-size: 13.5px;
+    }
+    body{
+        margin: 0;
+        width: 100%;
+        background: #674b7c;
+    }
+    /* ELEMENT DE BODY */
+        /* TITRE */
+        h1{
+            color: #ffff;
+            margin: 0px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%,-80%);
+            text-align: center;
+        }
+        /* BARRE */
+        textarea.barre1{
+            margin: 0px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: block;
+            border-radius: 3.75px;
+            border: none; 
+        }
+        input.barre2{
+            margin: 0px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: block;
+            border-radius: 3.75px;
+            border: none; 
+        }
+        /* AUTRE */
+        p.action{
+            color: #ffff;
+            margin: 0px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        p.barda{
+            color: #ffff;
+            margin: 0px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        p.but{
+            color: #ffff;
+            margin: 0px;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        /* BOUTON */
+        div.btn1{
+            margin: 0px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        div.btn2{
+            margin: 0px;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        input.chiff{
+            display: block;
+            font-weight: lighter;
+            color: #333;
+            padding: 10px 60px;
+            background: #ffbaae;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 8px #f47362;
+        }
+        input.chiff:hover{
+            box-shadow: 0 5.8px #f47362;
+            top: 2.3px;
+        }
+        input.chiff:active{
+            box-shadow: 0 0 #f47362;
+            top: 8px;
+        }
+        input.dechiff{
+            display: block;
+            font-weight: lighter;
+            color: #333;
+            padding: 10px 60px;
+            background: #ffbaae;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 8px #f47362;
+        }
+        input.dechiff:hover{
+            box-shadow: 0 5.8px #f47362;
+            top: 2.3px;
+        }
+        input.dechiff:active{
+            box-shadow: 0 0 #f47362;
+            top: 8px;
+        }
+        input[value="DECHIFFRER"][value="CHIFFRER"]{
+            color: #ffff;
+        }
+
+}

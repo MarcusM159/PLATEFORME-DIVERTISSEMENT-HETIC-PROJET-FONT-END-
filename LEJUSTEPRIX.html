@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="justeprix.css">
+	<title>JUSTE PRIX PAGE</title>
+	<script type="text/javascript">
+	var nb_coup = 0;
+	var nb = Math.floor(100*Math.random());
+	
+	
+	function jeux (){
+		var nombre = document.getElementById('solution').value;
+		
+		nb_coup++;
+		
+		if(nombre < nb) { 
+			alert("C'EST PLUS!");
+			document.getElementById('solution').value = '';
+		}
+		if(nombre > nb) {
+			document.getElementById("moin");
+			alert("C'EST MOIN!");
+			document.getElementById('solution').value = '';
+		}
+		if(nombre == nb) { 
+			alert("Bravo , le nombre �tait "+ nb +" Tu as gagn� en "+ nb_coup +" coup(s)");
+			document.getElementById("gagne");
+		}
+	}
+	</script>
+	<title>Le Juste prix</title>
+</head>   
+	<body>
+        <h1>LE JUSTE PRIX </h1>        
+        <input class="barre" type="text" id="solution" name="solution"/>
+		<div class="btn">
+        	<input class="joue" type="button" value="JOUER" onclick="jeux()">
+	    </div>
+	</body>
+		
+</html>
